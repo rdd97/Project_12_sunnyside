@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#main-section-bike {
+  background: url("./assets/bikes-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+#main-section-surf {
+  background: url("./assets/surf-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+#gallery1 {
+  background: url("./assets/gallery1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#gallery2 {
+  background: url("./assets/gallery2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#gallery3 {
+  background: url("./assets/gallery3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery4 {
+  background: url("./assets/gallery4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery5 {
+  background: url("./assets/gallery5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery6 {
+  background: url("./assets/gallery6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery7 {
+  background: url("./assets/gallery7.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery8 {
+  background: url("./assets/gallery8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.list li {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list li:hover {
+  color: "#fff";
+  text-decoration: underline;
+}
