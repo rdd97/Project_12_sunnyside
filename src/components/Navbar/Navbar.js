@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { BsList } from "react-icons/bs";
+import { BsList, BsPerson } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../Shared/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { onLogout } from "../../features/auth/authSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.auth);
+
   const navigate = useNavigate();
   // state to toggle the navbar on mobile screens
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +18,13 @@ const Navbar = () => {
   const navbarToggleHandler = () => {
     // toggle the state of isOpen to true or false on click of the navbar toggle button
     setIsOpen((prevValue) => !prevValue);
+  };
+
+  // function to logout the user and navigate to the home page on click of the logout button
+  const logoutHandler = () => {
+    // dispatch the onLogout action and update the state in the redux store
+    dispatch(onLogout());
+    navigate("/");
   };
 
   return (
@@ -42,14 +54,27 @@ const Navbar = () => {
           <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
             <Link to="/">Home</Link>
           </li>
-          <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
-            <Link to="/login">Login</Link>
-          </li>
-          <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
-            <Link to="/signup">Signup</Link>
-          </li>
+          {!isLoggedIn && (
+            <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
+              <Link to="/login">Login</Link>
+            </li>
+          )}
+          {!isLoggedIn && (
+            <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
+              <Link to="/signup">Signup</Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li className="text-lg transition-all duration-200 ease-in hover:opacity-80">
+              <Link to="/profile" className="flex items-center gap-2">
+                <BsPerson className="text-2xl" />
+                Profile
+              </Link>
+            </li>
+          )}
+          {isLoggedIn && <Button onClick={logoutHandler}>Logout</Button>}
         </ul>
-        <Button>List a Ride</Button>
+        <Button onClick={() => navigate("/listings")}>Book a Ride</Button>
       </nav>
     </div>
   );

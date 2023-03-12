@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import BrandsSection from "../components/BrandsSection/BrandsSection";
-import Footer from "../components/Footer/Footer";
 import GallerySection from "../components/GallerySection/GallerySection";
 import HeroSection from "../components/HeroSection/HeroSection";
 import InfoSection from "../components/InfoSection/InfoSection";
@@ -28,7 +27,6 @@ const HomePage = () => {
           <GallerySection /> {/* Gallery Section */}
           <BrandsSection /> {/* Brands Section */}
         </div>
-        <Footer /> {/* Footer */}
       </div>
     </div>
   );

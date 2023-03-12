@@ -83,3 +83,13 @@
   color: "#fff";
   text-decoration: underline;
 }
+
+.PhoneInputInput {
+  background: transparent !important;
+  width: 100% !important;
+}
+.PhoneInputInput:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

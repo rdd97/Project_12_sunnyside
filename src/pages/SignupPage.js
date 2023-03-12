@@ -6,7 +6,7 @@ const SignupPage = () => {
   return (
     <div className="bg-secondary text-white h-full">
       <SimpleNavbar />
-      <div className="flex justify-center items-center p-4 mt-8">
+      <div className="flex justify-center items-center p-4 mt-4">
         <SignupForm />
       </div>
     </div>
