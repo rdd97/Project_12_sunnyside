@@ -5,6 +5,7 @@ import Info1 from "../../assets/info1.png";
 import Info2 from "../../assets/info2.png";
 import Info3 from "../../assets/info3.png";
 import Button from "../Shared/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 // data for the info section
 const INFO_DATA = [
@@ -32,6 +33,7 @@ const INFO_DATA = [
 ];
 
 const InfoSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="py-4">
       <div className="text-center">
@@ -59,7 +61,9 @@ const InfoSection = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-8">
-        <Button className={"w-52"}>List a Ride</Button>
+        <Button onClick={() => navigate("/listings")} className={"w-52"}>
+          Book a Ride
+        </Button>
       </div>
     </div>
   );

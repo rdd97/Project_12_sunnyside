@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../Shared/Button/Button";
 import GalleryItem from "./GalleryItem";
 
@@ -31,6 +32,7 @@ const GALLERY_DATA = [
 ];
 
 const GallerySection = () => {
+  const navigate = useNavigate();
   return (
     <div className="py-10">
       <div
@@ -68,7 +70,9 @@ const GallerySection = () => {
             Make extra cash by sharing your bikes with travelers, racers, and
             enthusiasts.
           </p>
-          <Button className={"mt-4 w-52"}>List a Ride</Button>
+          <Button onClick={() => navigate("/listings")} className={"mt-4 w-52"}>
+            Book a Ride
+          </Button>
         </div>
       </div>
     </div>
